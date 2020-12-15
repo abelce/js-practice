@@ -1,0 +1,24 @@
+@for $i from 1 through 9 {
+    .item-#{$i} {
+
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+}
+
+
+#content a%extreme {
+    color: red;
+}
+
+.notice {
+    @extend %extreme;
+}
+
+// =>>>>>> 
+#content a.notice {
+    color: red;
+}

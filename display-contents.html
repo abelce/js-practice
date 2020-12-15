@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .item {
+            /* display: contents; */
+            color: red;
+            border: 2px solid blue;
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+        }
+        .item::before {
+            content: 'before';
+            color: blue;
+        }
+        .item::after {
+            content: 'after';
+            color: white;
+        }
+    </style>
+
+</head>
+<body style="background-color: black;">
+    <div class="item">
+        <span>demo</span>
+    </div>
+</body>
+</html>
+http://cdn.vwood.xyz/contents.png

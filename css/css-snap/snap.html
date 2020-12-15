@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: row;
+            overflow: auto;
+            white-space: nowrap;
+            scroll-snap-type: x mandatory;
+        }
+
+        .content {
+            flex-wrap: 0;
+            flex-shrink: 0;
+            height: 100px;
+            width: 300px;
+            scroll-snap-align: start;
+            display: inline-block;
+            text-align: center;
+            font-size: 48px;
+        }
+        .content:nth-child(1) {
+            background-color: red;
+        }
+        .content:nth-child(2) {
+            background-color: blue;
+        }
+        .content:nth-child(3) {
+            background-color: orange;
+        }
+        .content:nth-child(4) {
+            background-color: green;
+        }
+        .content:nth-child(5) {
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <div class="content">1</div>
+        <div class="content">2</div>
+        <div class="content">3</div>
+        <div class="content">4</div>
+        <div class="content">5</div>
+    </div>
+</body>
+
+</html>

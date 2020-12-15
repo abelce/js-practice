@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <style>
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        ol {
+            counter-reset: section;
+        }
+
+        li {
+            counter-increment: section;
+        }
+        li::before {
+            content: counter(section) ". ";
+        }
+
+        .total::before {
+            content: counter(section);
+        }
+    </style>
+    <div>
+        <ol>
+            <li>css counter</li>
+            <li>css counter</li>
+            <li>css counter</li>
+            <li>css counter</li>
+            <div>
+                总共<span class="total"></span>个
+            </div>
+        </ol>
+    </div>
+</body>
+
+</html>

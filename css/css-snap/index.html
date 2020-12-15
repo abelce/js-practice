@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        * {
+            font-size: 48px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 列表仅水平滚动 */
+        .list {
+            display: flex;
+            overflow-y: hidden;
+        }
+
+        /* 主内容宽度100%，白色背景覆盖 */
+        .content {
+            flex: 0 0 100vw;
+            background-color: #fff;
+            position: relative;
+        }
+
+        /* 空标签元素，作用是腾出水平滚动空间 */
+        .space {
+            flex: 0 0 8rem;
+        }
+
+        /* 按钮绝对定位，藏在内容白色背景后面 */
+        .button {
+            width: 4rem;
+            position: absolute;
+            right: 0;
+            color: #fff;
+            background-color: red;
+            text-align: center;
+        }
+
+        .button-display {
+            right: 4rem;
+            background-color: orange;
+        }
+
+        .list {
+            scroll-snap-type: x mandatory;
+        }
+
+        .space {
+            scroll-snap-align: end;
+        }
+
+        .content {
+            scroll-snap-align: start;
+        }
+
+        .list {
+            perspective: 1px;
+            transform-style: preserve-3d;
+            perspective-origin: 100% 50%;
+        }
+
+        .button:last-of-type {
+            transform: translate3D(2rem, 0, -1px) scale(2);
+        }
+
+        .button:first-of-type {
+            transform: translate3D(2rem, 0, -3px) scale(4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="list">
+        <div class="button" data-type="danger">删除</div>
+        <div class="button button-display" data-type="danger">不显示</div>
+        <a href="javascript:" class="content">我是列表，试试左滑我</a>
+        <s class="space"></s>
+    </div>
+</body>
+
+</html>

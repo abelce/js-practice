@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        #a:hover ~ div {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>同级元素0</div>
+    <div id="a">
+        元素1   
+        <div id="b">元素2</div>
+    </div>
+    <div id="c">
+        元素3   
+        <div id="b">元素2</div>
+    </div>
+    <div>同级元素1</div>
+    <div>同级元素2</div>
+    <div>同级元素3</div>
+</body>
+
+</html>

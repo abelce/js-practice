@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .target {
+            position: absolute;
+            top: 0;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* animation: move 2s ease-in both; */
+        }
+
+        @keyframes move {
+            from {
+                top: 0px;
+            }
+
+            to {
+                top: 200px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="target">
+        target
+    </div>
+    <script>
+        var target = document.querySelector('.target');
+        var heigt  = 200;
+        var start = 0;
+        function step (time) {
+            if (!start) start  = time;
+            var h = Math.floor( (time - start) / 20) * 2;
+            if (h <= heigt) {
+                target.style.top = h + "px";
+                window.requestAnimationFrame(step);
+            } else {
+                target.style.top =  "200px";
+            }
+        }
+        window.requestAnimationFrame(step)
+    </script>
+</body>
+
+</html>

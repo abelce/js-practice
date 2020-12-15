@@ -14,3 +14,45 @@ function curry(fn) {
         }
     }
 }
+
+function curry2(fn, args) {
+    let len = fn.length;
+    let args = args || [];
+
+    return function() {
+        args = args.concat(Array.from(arguments));
+        if (args.length >= len) {
+            return fn.apply(this, args);
+        } else {
+            return curry2(fn, args);
+        }
+    }
+
+}
+
+function curry3(fn, args) {
+    let len = fn.length;
+    args = args || [];
+    return function() {
+        args = args.concat(arguments)
+        if (args.length >= len) {
+            return fn.apply(this, args);
+        } else {
+            return curry3(fn, args);
+        }
+    }
+}
+
+function curry4(fn) {
+    const len = fn.length;
+    let args = Array.prototype.slice.call(arguments, 1);
+    return function() {
+        args = args.concat(arguments);
+        if (args.length >= len) {
+            return fn.apply(this, args);
+        }
+        else {
+            return curry4(fn, ...args);
+        }
+    }
+}

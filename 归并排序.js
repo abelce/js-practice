@@ -31,3 +31,32 @@ function merge(left, right) {
 
     return result;
 }
+
+function mergeSort2(arr) {
+    if(arr.length < 2) {
+        return arr;
+    }
+
+    const middle = Math.floor(arr.length / 2);
+    return merge2(mergeSort2(arr.slice(0, middle)), mergeSort2(arr.slice(middle)));
+}
+
+
+function merge2(a, b) {
+    let result = [];
+    while(a.length && b.length) {
+        if(a[0] <= b[0]) {
+            result.push(a.shift())
+        } else {
+            result.push(b.shift())
+        }
+    }
+
+    if (a.length) {
+        result.concat(a)
+    }
+    if (b.length) {
+        result.concat(b);
+    }
+    return result;
+}
